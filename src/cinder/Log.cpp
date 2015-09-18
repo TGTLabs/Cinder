@@ -548,8 +548,10 @@ public:
 		LPCTSTR wStrings[2];
 		wStrings[0] = wMeta.c_str();
 		wStrings[1] = wText.c_str();
+
+		DWORD eventID = meta.mLevel + 100;
 	
-		::ReportEventW( mHLog, eventLevel, 0, 0, 0, 2, 0, wStrings, 0 );
+		::ReportEventW( mHLog, eventLevel, 0, eventID, 0, 2, 0, wStrings, 0 );
 	}
 
 protected:
